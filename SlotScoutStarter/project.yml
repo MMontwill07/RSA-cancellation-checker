@@ -1,0 +1,25 @@
+name: SlotScout
+options:
+  bundleIdPrefix: ie.example
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: '17.0'
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1'
+targets:
+  SlotScout:
+    type: application
+    platform: iOS
+    sources: [iOS/SlotScout]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ie.example.slotscout
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        CODE_SIGN_ENTITLEMENTS: iOS/SlotScout/SlotScout.entitlements
+        INFOPLIST_KEY_CFBundleDisplayName: SlotScout
+    entitlements:
+      path: iOS/SlotScout/SlotScout.entitlements
+      properties:
+        aps-environment: development
